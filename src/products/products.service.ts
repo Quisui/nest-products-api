@@ -20,10 +20,10 @@ export class ProductsService {
 
   constructor(
     @InjectRepository(Product)
-    private readonly productRepository: Repository<Product>,
+    public readonly productRepository: Repository<Product>,
     @InjectRepository(ProductImage)
-    private readonly productImageRepository: Repository<ProductImage>,
-    private readonly dataSource: DataSource,
+    public readonly productImageRepository: Repository<ProductImage>,
+    public readonly dataSource: DataSource,
   ) {}
 
   async create(createProductDto: CreateProductDto): Promise<Product> {
